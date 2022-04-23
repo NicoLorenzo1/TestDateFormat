@@ -23,7 +23,7 @@ namespace DateFormat
         }
 
         /// <summary>
-        /// Test para probar el método "changeFormat2 el cual se le ingresa la fecha en formato DD/MM//YYYY y la devuelve 
+        /// Test para probar el método "changeFormat2" el cual se le ingresa la fecha en formato DD/MM//YYYY y la devuelve 
         /// en el formato MM-YYYY-DD.
         /// </summary>
         [Test]
