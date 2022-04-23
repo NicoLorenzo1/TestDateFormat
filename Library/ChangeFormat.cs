@@ -47,11 +47,6 @@ namespace DateFormat
             Array.Reverse(testDate4);
             return string.Join("/", testDate4);
 
-
-            //return year.Substring(8) + "/" + year.Substring(5, 6) + "/" + year.Substring(0,4);
-            //return year.slice(8) + "/" + year.Substring( 6) + "/" + year.Substring(0, 4);
-
-
         }
     }
 }
