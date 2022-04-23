@@ -2,38 +2,56 @@ using System;
 
 namespace DateFormat
 {
-    public class ChangeFormat
+    public class ChangeFormatClass
     {
-        public static String changeFormat(String year)
+
+        /// <summary>
+        /// Método "changeFormat" que recibe la fecha en el formato DD-MM-YYYY y la devuelve en el formato YYYY-MM-DD
+        /// </summary>
+        /// <param name="year"></param>
+        /// <returns></returns>
+        public static String ChangeFormat(String year)
         {
             return year.Substring(6) + "-" + year.Substring(3, 2) + "-" + year.Substring(0, 2);
         }
 
         /// <summary>
-        /// Metodo que recibe la fecha en formato DD/MM/YYYY y retorna la fecha en formato MM-YYYY-DD
+        /// Metodo "changeFormatMYD" que recibe la fecha en formato DD/MM/YYYY y retorna la fecha en formato MM-YYYY-DD
         /// </summary>
         /// <param name="year"></param>
         /// <returns></returns>
-        public static string changeFormat2(string year)
+        public static string ChangeFormatMYD(string year)
         {
             return year.Substring(3, 2) + "-" + year.Substring(6) + "-" + year.Substring(0, 2);
         }
 
         /// <summary>
-        /// Metodo que recibe la fecha en formato DD/MM/YYY y retorna la fecha en formato DD-YYYY-MM
+        /// Metodo "changeFormatDYM" que recibe la fecha en formato DD/MM/YYY y retorna la fecha en formato DD-YYYY-MM
         /// </summary>
         /// <param name="year"></param>
         /// <returns></returns>
-        public static string changeFormat3(string year)
+        public static string ChangeFormatDYM(string year)
         {
             return year.Substring(0, 2) + "-" + year.Substring(6) + "-" + year.Substring(3, 2);
         }
 
-        //string testDate4 = "1977-11-10";
-        //string expected = "10/11/1977";
-        public static string changeFormat4(string year)
+
+        /// <summary>
+        /// La funcón del método "changeFormatDMY" es convertir la fecha del formato YYYY-MM-DD al formato DD/MM/YYYY
+        /// en este caso se uso la función "Split" para hacer un metodo diferente a los anteriores.
+        /// <param name="year"></param>
+        /// <returns></returns>
+        public static string ChangeFormatDMY(string year)
         {
-            return year.Substring(8) + "/" + year.Substring(5,6) + "/" + year.Substring(0, 4);
+            String[] testDate4 = year.Split("-");
+            Array.Reverse(testDate4);
+            return string.Join("/", testDate4);
+
+
+            //return year.Substring(8) + "/" + year.Substring(5, 6) + "/" + year.Substring(0,4);
+            //return year.slice(8) + "/" + year.Substring( 6) + "/" + year.Substring(0, 4);
+
+
         }
     }
 }

@@ -3,11 +3,12 @@ using NUnit.Framework;
 namespace DateFormat
 {
 
-    public class Tests
+    public class ChangeFormatTest
     {
         [SetUp]
         public void Setup()
         {
+
         }
 
         /// <summary>
@@ -19,7 +20,7 @@ namespace DateFormat
         {
             string testDate = "10/11/1977";
             string expected = "1977-11-10";
-            Assert.AreEqual(expected, ChangeFormat.changeFormat(testDate));
+            Assert.AreEqual(expected, ChangeFormatClass.ChangeFormat(testDate));
         }
 
         /// <summary>
@@ -31,7 +32,7 @@ namespace DateFormat
         {
             string testDate = "10/11/1977";
             string expected = "11-1977-10";
-            Assert.AreEqual(expected, ChangeFormat.changeFormat2(testDate));
+            Assert.AreEqual(expected, ChangeFormatClass.ChangeFormatMYD(testDate));
         }
 
         /// <summary>
@@ -43,15 +44,18 @@ namespace DateFormat
         {
             string testDate = "10/11/1977";
             string expected = "10-1977-11";
-            Assert.AreEqual(expected, ChangeFormat.changeFormat3(testDate));
+            Assert.AreEqual(expected, ChangeFormatClass.ChangeFormatDYM(testDate));
         }
 
+        /// <summary>
+        ///Test para probar el método "changeFormat4" el cual se le ingresa una fecha en formato YYYY-MM-DD y la convierte al formato DD/MM/YYYY.
+        /// </summary>
         [Test]
         public void CorrectCHangeFormat4Test()
         {
             string testDate4 = "1977-11-10";
             string expected = "10/11/1977";
-            Assert.AreEqual(expected, ChangeFormat.changeFormat4(testDate4));
+            Assert.AreEqual(expected, ChangeFormatClass.ChangeFormatDMY(testDate4));
         }
     }
 }
